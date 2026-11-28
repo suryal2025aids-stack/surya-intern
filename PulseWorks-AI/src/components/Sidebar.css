@@ -1,0 +1,154 @@
+.sidebar {
+  width: 244px;
+  flex: 0 0 244px;
+  min-height: calc(100vh - 106px);
+  padding: 30px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-right: 1px solid #eeedf3;
+}
+
+.sidebar-label {
+  margin: 0 0 11px 10px;
+  color: #aaa9b7;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 4px;
+}
+
+.nav-item {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #77768b;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: color 140ms ease, background 140ms ease;
+}
+
+.nav-item:hover {
+  color: #6254d0;
+  background: #f8f7ff;
+}
+
+.nav-item-active {
+  color: #6558d9;
+  background: #f1efff;
+  font-weight: 650;
+}
+
+.nav-item-active svg {
+  color: #7466e8;
+}
+
+.nav-count {
+  min-width: 22px;
+  margin-left: auto;
+  padding: 2px 6px;
+  color: #8d8ca0;
+  background: #f2f2f6;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.sidebar-bottom > .sidebar-label {
+  margin-top: 32px;
+}
+
+.sidebar-help {
+  margin: 28px 4px 20px;
+  padding: 15px;
+  background: #faf9ff;
+  border: 1px solid #efedfc;
+  border-radius: 9px;
+}
+
+.help-spark {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 11px;
+  display: grid;
+  place-items: center;
+  color: #7567e8;
+  background: #eeebff;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+.sidebar-help strong {
+  color: #3d3b53;
+  font-size: 11px;
+}
+
+.sidebar-help p {
+  margin: 5px 0 11px;
+  color: #9291a2;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.sidebar-help a {
+  color: #6f60dd;
+  font-size: 10px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.sidebar-help a span {
+  margin-left: 3px;
+}
+
+.sidebar-version {
+  margin: 0 10px;
+  color: #aaa9b7;
+  font-size: 9px;
+}
+
+.sidebar-version span {
+  margin: 0 3px;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    position: fixed;
+    z-index: 31;
+    top: 106px;
+    bottom: 0;
+    left: 0;
+    width: 260px;
+    min-height: 0;
+    padding-bottom: 20px;
+    box-shadow: 12px 0 28px rgb(32 30 55 / 7%);
+    transform: translateX(-110%);
+    transition: transform 180ms ease;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .sidebar {
+    top: 96px;
+  }
+}

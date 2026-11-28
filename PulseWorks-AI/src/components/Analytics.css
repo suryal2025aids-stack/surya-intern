@@ -1,0 +1,259 @@
+.analytics-content {
+  display: grid;
+  gap: 20px;
+}
+
+.analytics-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.analytics-stat {
+  min-height: 102px;
+  padding: 17px 18px;
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+  column-gap: 12px;
+  background: #fff;
+  border: 1px solid #eeedf3;
+  border-radius: 9px;
+}
+
+.analytics-stat-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.analytics-stat > div p {
+  margin: 0 0 2px;
+  color: #8d8c9d;
+  font-size: 10px;
+}
+
+.analytics-stat > div strong {
+  color: #39384e;
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.analytics-stat-note {
+  grid-column: 2;
+  margin-top: -1px;
+  color: #aaa9b7;
+  font-size: 9px;
+}
+
+.analytics-chart {
+  padding: 22px 24px;
+  background: #fff;
+  border: 1px solid #eeedf3;
+  border-radius: 10px;
+}
+
+.analytics-chart-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.analytics-chart-heading h2 {
+  margin: 0;
+  color: #39384e;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.analytics-chart-heading p {
+  margin: 5px 0 0;
+  color: #9291a2;
+  font-size: 10px;
+}
+
+.analytics-source {
+  padding: 5px 8px;
+  color: #348d6b;
+  background: #eaf8f1;
+  border-radius: 5px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.analytics-user-list {
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+  list-style: none;
+}
+
+.analytics-user-row {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) minmax(80px, 3fr) minmax(45px, auto);
+  align-items: center;
+  gap: 14px;
+}
+
+.analytics-user-name,
+.analytics-user-count {
+  color: #77768b;
+  font-size: 10px;
+}
+
+.analytics-user-count {
+  color: #9291a2;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.analytics-progress {
+  height: 8px;
+  overflow: hidden;
+  background: #f0eff5;
+  border-radius: 99px;
+}
+
+.analytics-progress > span {
+  height: 100%;
+  display: block;
+  background: #8174e9;
+  border-radius: inherit;
+  transition: width 180ms ease;
+}
+
+.analytics-attribution {
+  margin: -10px 0 0;
+  color: #aaa9b7;
+  font-size: 9px;
+}
+
+.analytics-state {
+  min-height: 190px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #9291a2;
+  background: #fff;
+  border: 1px solid #eeedf3;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.analytics-state p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.analytics-error h2 {
+  margin: 0;
+  color: #4a495e;
+  font-size: 15px;
+}
+
+.analytics-error .secondary-button {
+  min-height: 34px;
+  padding: 0 12px;
+  color: #6558d9;
+  background: #fff;
+  border: 1px solid #e3e0f6;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.analytics-error .secondary-button:hover {
+  background: #f8f7ff;
+}
+
+.analytics-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #e8e5fb;
+  border-top-color: #8174e9;
+  border-radius: 50%;
+  animation: analytics-spin 700ms linear infinite;
+}
+
+@keyframes analytics-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 760px) {
+  .analytics-summary {
+    gap: 10px;
+  }
+
+  .analytics-stat {
+    padding: 14px;
+    column-gap: 9px;
+  }
+}
+
+@media (max-width: 560px) {
+  .analytics-content {
+    gap: 14px;
+  }
+
+  .analytics-summary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .analytics-stat {
+    min-height: 76px;
+    padding: 12px 15px;
+    grid-template-columns: 34px 1fr auto;
+  }
+
+  .analytics-stat-note {
+    grid-column: 3;
+    grid-row: 1;
+    margin: 0;
+    text-align: right;
+  }
+
+  .analytics-stat-icon {
+    grid-row: 1 / span 2;
+  }
+
+  .analytics-stat > div {
+    grid-row: 1 / span 2;
+  }
+
+  .analytics-chart {
+    padding: 17px 14px;
+  }
+
+  .analytics-user-row {
+    grid-template-columns: 75px minmax(50px, 1fr) 42px;
+    gap: 8px;
+  }
+
+  .analytics-user-name,
+  .analytics-user-count {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analytics-spinner {
+    animation-duration: 1800ms;
+  }
+
+  .analytics-progress > span {
+    transition: none;
+  }
+}
